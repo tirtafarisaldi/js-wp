@@ -1,3 +1,9 @@
+body {
+  margin: 0;
+  background-color: #2c2e31;
+  font-family: Lato !important;
+}
+
 .view {
   position: absolute;
   top: 0;

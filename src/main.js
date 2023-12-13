@@ -1,29 +1,21 @@
-import { ping } from './services'
-import { show } from './views/message'
+import {
+    megabillboard
+} from './views/megabillboard/megabillboard'
+import { amp } from './views/megabillboard/megabillboard';
 
-const supportedAPI = ['key']; // enlist all methods supported by API (e.g. `mw('event', 'user-login');`)
+const supportedAPI = ['megabillboard', 'amp']; // enlist all methods supported by API (e.g. `mw('event', 'user-login');`)
 
 function app(window) {
 
-    // set default configurations
     let configurations = {
         someDefaultConfiguration: false
     };
-
-    // all methods that were called till now and stored in queue
-    // needs to be called now 
-    let globalObject = window[window['JS-SCRIPT']];
+    let globalObject = window[window['IDNADS']];
     let queue = globalObject.q;
 
-    // override temporary (until the app loaded) handler
-    // for widget's API calls
     globalObject = apiHandler(queue[0][0], queue[0][1]);
-    // globalObject.configurations = configurations;
 }
 
-/**
-    Method that handles all API calls
-    */
 function apiHandler(api, params) {
     if (!api) throw Error('API method required');
     api = api.toLowerCase();
@@ -33,9 +25,11 @@ function apiHandler(api, params) {
     console.log(`Handling API call ${api}`, params);
 
     switch (api) {
-        // TODO: add API implementation
-        case 'key':
-            show(params);
+        case 'megabillboard':
+            megabillboard(params);
+            break;
+        case 'amp':
+            amp(params);
             break;
         default:
             console.warn(`No handler defined for ${api}`);

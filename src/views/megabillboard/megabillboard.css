@@ -1,0 +1,101 @@
+.view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.view-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-perspective: 1px;
+  perspective: 1px;
+}
+
+.view-cover {
+  -webkit-transform: translateZ(-1px) scale(2) translateY(-58px);
+  transform: translateZ(-1px) scale(2) translateY(-58px);
+}
+
+.view-body {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.view-cover {
+  height: 400px;
+  background: green;
+  background-image: url(https://lh3.googleusercontent.com/54JuX86dkSzL80HZ7ECLp2SPTXqY9VRETG8lIPYmKTL06dwLdBRUxup3uPwYVR8wiSjZG6QqLNACSHTmeP4xymnh-Jn9II4BAFiz8zr0wh3iamQhYSxTY3HnBf5xI3XzTxFLBy8avB10zROJ6PX7YMjt2XRwXW78NMnKLgttzxCsb6RGITderqHfU0W-9W1j5mlEbaOgUKpP9bXJCt0q6jbb3almkgofVsZiYD4LeyJAN1AnsqaS_h5P55iB8f09uw2dZHHeqAmrmVnVo4p5ojo-mbcqKvmk4n6uDxrZukAIS1tn7DxJkPBPPLKC3Ok9ER9ZLC0l5YmvQ89bVbL-J3SxEeOm9h6j4s6LVThcUbz2dig-C20h2J90Uy0NRjRNOlimNkX--XVchzyeTq2nt4_oVOtayg7oivMsi7ea112st9zL7X9mEYJKU6xNtk5wylq1ZbU3UKhXiomBkSeyDcFF8AkPAmbC8OgdLha4gWWO3E7VulqV9Tkkl5VXVipnPY6sew=w480-h320-no-l75);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.view-header {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: #db4437;
+  color: #fff;
+  padding: 0 8px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  opacity: 0.5;
+}
+
+.view-body {
+  background: #f1f1f1;
+  position: relative;
+  min-height: 100%;
+}
+
+.view-header-gap {
+  height: 0px; /* same as header's height or 0 if header is transparent */
+}
+
+.view-content {
+  position: relative;
+  min-height: 100%;
+}
+
+.stream {
+  padding: 8px 0;
+}
+
+.post {
+  margin: 8px auto;
+  padding: 8px;
+  max-width: 320px;
+  background: #fff;
+  border: 1px solid #aaa;
+}
+
+.post-content {
+  margin: 16px 0;
+}
+
+.post-image {
+  width: 100%;
+  height: auto;
+}

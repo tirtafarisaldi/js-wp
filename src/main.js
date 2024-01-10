@@ -3,7 +3,7 @@ import {
 } from './views/megabillboard'
 import { amp } from './views/megabillboard';
 
-const supportedAPI = ['megabillboard', 'amp']; // enlist all methods supported by API (e.g. `mw('event', 'user-login');`)
+const supportedAPI = ['megabillboard', 'leaderboard', 'amp']; // enlist all methods supported by API (e.g. `mw('event', 'user-login');`)
 
 function app(window) {
 

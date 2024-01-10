@@ -77,7 +77,8 @@ body {
 }
 
 .view-header-gap {
-  height: 0px; /* same as header's height or 0 if header is transparent */
+  height: 0px;
+  /* same as header's height or 0 if header is transparent */
 }
 
 .view-content {
@@ -104,4 +105,19 @@ body {
 .post-image {
   width: 100%;
   height: auto;
+}
+
+.ad-mega_billboard {
+  top: 0px !important;
+  height: 0px !important;
+  animation: adsmaller 0.5s linear forwards;
+}
+
+.ad-mega_billboard-container {
+  position: fixed;
+  z-index: 4 !important;
+  height: 290px;
+  animation: headersmaller 0.5s linear forwards;
+  bottom: 100px;
+  top: 57px !important;
 }

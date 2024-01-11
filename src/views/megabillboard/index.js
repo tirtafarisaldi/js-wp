@@ -22,6 +22,29 @@ function useState(defaultValue) {
 export function megabillboard(params) {
     let firstVisit = true;
 
+    let head = document.getElementsByTagName('head')[0];
+    var s = document.createElement('script');
+    var code = `
+        window.googletag = window.googletag || {cmd: []};
+
+        googletag.cmd.push(function () {googletag.defineSlot('/253109699/IDNTimesMobile/Homepage', [[320, 480]], 'div-gpt-ad-mega_billboard')
+        .setTargeting('pos', ['mega_billboard'])
+        .addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();}); 
+        
+        googletag.cmd.push(function () {googletag.display('div-gpt-ad-mega_billboard');});
+    `;
+    try {
+        s.appendChild(document.createTextNode(code));
+        head.appendChild(s);
+    } catch (e) {
+        s.text = code;
+        head.appendChild(s);
+        k
+    }
+
+
     function backToDefault() {
         document.getElementById("header").classList.remove("ad-mega_billboard-container")
         document.getElementById("div-gpt-ad-mega_billboard").classList.remove("ad-mega_billboard")
@@ -45,6 +68,7 @@ export function megabillboard(params) {
     };
 
     document.getElementsByClassName('megabillboard')[0].innerHTML = megabillboardElement;
+
 }
 
 export function amp(params) {

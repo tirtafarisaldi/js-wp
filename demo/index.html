@@ -18,25 +18,6 @@
         }(window, document, 'script', 'mw', './widget.js'));
         mw('megabillboard');
     </script>
-    <script>
-        window.googletag = window.googletag || {
-            cmd: []
-        };
-        googletag.cmd.push(function () {
-            googletag.defineSlot('/253109699/IDNTimesMobile/Homepage', [
-                    [320, 480]
-                ], 'div-gpt-ad-mega_billboard')
-                .setTargeting('pos', ['mega_billboard'])
-                .addService(googletag.pubads());
-            googletag.pubads().enableSingleRequest();
-            googletag.enableServices();
-        });
-    </script>
-    <script>
-        googletag.cmd.push(function () {
-            googletag.display('div-gpt-ad-mega_billboard');
-        });
-    </script>
     <style>
         div.sticky-navbar {
             position: -webkit-sticky;

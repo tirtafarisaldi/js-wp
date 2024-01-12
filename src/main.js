@@ -1,9 +1,6 @@
 import {
-    megabillboard
-} from './views/megabillboard'
-import { amp } from './views/megabillboard';
-
-const supportedAPI = ['megabillboard', 'leaderboard', 'amp']; // enlist all methods supported by API (e.g. `mw('event', 'user-login');`)
+    idntimes
+} from './views/publishers/IDNTimes'
 
 function app(window) {
 
@@ -19,26 +16,16 @@ function app(window) {
 
     head.appendChild(script);
 
-    globalObject = apiHandler(queue[0][0], queue[0][1]);
+    globalObject = apiHandler(queue[0][0], queue[0][1], queue[0][2]);
 }
 
-function apiHandler(api, params) {
-    if (!api) throw Error('API method required');
-    api = api.toLowerCase();
-
-    if (supportedAPI.indexOf(api) === -1) throw Error(`Method ${api} is not supported`);
-
-    console.log(`Handling API call ${api}`, params);
-
-    switch (api) {
-        case 'megabillboard':
-            megabillboard(params);
-            break;
-        case 'amp':
-            amp(params);
+function apiHandler(publisher, channel, platform) {
+    switch (publisher) {
+        case 'IDNTimes':
+            idntimes(channel, platform);
             break;
         default:
-            console.warn(`No handler defined for ${api}`);
+            console.warn(`No handler defined for Publisher`);
     }
 }
 

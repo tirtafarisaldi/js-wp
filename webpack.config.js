@@ -10,7 +10,7 @@ module.exports = (env) => {
         mode: 'production',
         entry: './src/main.js',
         output: {
-            filename: 'widget.js',
+            filename: 'script.js',
             path: path.resolve(bundleOutputDir),
         },
         devServer: {

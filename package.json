@@ -3,7 +3,7 @@
   "scripts": {
     "build": "webpack",
     "build-release": "./node_modules/.bin/webpack --config webpack.config.js --env.prod",
-    "start": "webpack-dev-server --open"
+    "start": "webpack serve"
   },
   "dependencies": {
     "@babel/core": "^7.0.0-beta.32",

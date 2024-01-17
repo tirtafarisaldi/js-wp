@@ -27,7 +27,7 @@ export function megabillboard(publisher, channel, platform) {
     var code = `
         window.googletag = window.googletag || {cmd: []};
 
-        googletag.cmd.push(function () {googletag.defineSlot('/253109699/${publisher}${platform}/${channel}', [[320, 480]], 'div-gpt-ad-mega_billboard')
+        googletag.cmd.push(function () {googletag.defineSlot('/253109699/${publisher}${platform}/${channel}', [[1, 1], [320, 480]], 'div-gpt-ad-mega_billboard')
         .setTargeting('pos', ['mega_billboard'])
         .addService(googletag.pubads());
         googletag.pubads().enableSingleRequest();
@@ -83,5 +83,11 @@ export function amp(publisher) {
             .getElementById('header')
             .classList.add('hiddenParallax')
     });
+
+    let head = document.getElementsByTagName('head')[0];
+    let script = document.createElement('script');
+    script.src = "https://cdn.ampproject.org/v0/amp-ad-0.1.js";
+
+    head.appendChild(script);
 
 }

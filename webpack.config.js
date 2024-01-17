@@ -14,7 +14,11 @@ module.exports = (env) => {
             path: path.resolve(bundleOutputDir),
         },
         devServer: {
-            contentBase: bundleOutputDir
+            static: {
+                directory: bundleOutputDir,
+              },
+              compress: true,
+              port: 9000,     
         },
         plugins: isDevBuild
             ? [new webpack.SourceMapDevToolPlugin(), new copyWebpackPlugin([{ from: 'demo/' }])]

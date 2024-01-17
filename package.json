@@ -3,7 +3,8 @@
   "scripts": {
     "build": "webpack",
     "build-release": "./node_modules/.bin/webpack --config webpack.config.js --env.prod",
-    "start": "webpack-dev-server --open"
+    "dev": "webpack-dev-server --open",
+    "start": "webpack --config webpack.config.js"
   },
   "dependencies": {
     "@babel/core": "^7.0.0-beta.32",
@@ -13,7 +14,8 @@
     "css-loader": "^3.2.0",
     "html-loader": "^0.5.1",
     "style-loader": "^0.19.0",
-    "webpack": "^3.8.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^2.9.4"
   }
 }

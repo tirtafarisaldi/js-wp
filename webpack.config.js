@@ -7,6 +7,7 @@ module.exports = (env) => {
     const isDevBuild = !(env && env.prod);
 
     return [{
+        mode: 'production',
         entry: './src/main.js',
         output: {
             filename: 'widget.js',

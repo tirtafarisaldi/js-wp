@@ -17,6 +17,7 @@ module.exports = (env) => {
             static: {
                 directory: bundleOutputDir,
               },
+              allowedHosts: 'all',
               compress: true,
               port: 9000,     
         },

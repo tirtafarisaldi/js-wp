@@ -21,9 +21,9 @@ function useState(defaultValue) {
 
 export function megabillboard(publisher, channel, platform) {
     let firstVisit = true;
+    let head = document.getElementsByTagName('head')[0];
 
-    function addGptTag() {
-        let head = document.getElementsByTagName('head')[0];
+    function defineSlot() {
         var s = document.createElement('script');
         var code = `
             window.googletag = window.googletag || {cmd: []};
@@ -45,6 +45,20 @@ export function megabillboard(publisher, channel, platform) {
             k
         }
     }
+
+    function displaySlot() {
+        var s = document.createElement('script');
+        var code = `googletag.cmd.push(function () {googletag.display('div-gpt-ad-mega_billboard');});`;
+        try {
+            s.appendChild(document.createTextNode(code));
+            head.appendChild(s);
+        } catch (e) {
+            s.text = code;
+            head.appendChild(s);
+            k
+        }
+    }
+    
 
 
     function backToDefault() {
@@ -69,8 +83,9 @@ export function megabillboard(publisher, channel, platform) {
         scrollFunction()
     };
 
-    addGptTag();
+    defineSlot();
     document.getElementById('megabillboard').innerHTML = megabillboardElement;
+    setTimeout(displaySlot, 500)
     document.getElementById("btn-close").addEventListener('click', function () {
         var T = document.getElementById("header");
         T.style.display = "none";

@@ -69,7 +69,7 @@ export function megabillboard(publisher, channel, platform) {
         scrollFunction()
     };
 
-    document.getElementsByClassName('megabillboard')[0].innerHTML = megabillboardElement;
+    document.getElementById('megabillboard').innerHTML = megabillboardElement;
     addGptTag();
     document.getElementById("btn-close").addEventListener('click', function () {
         var T = document.getElementById("header");

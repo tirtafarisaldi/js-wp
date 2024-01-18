@@ -1,6 +1,7 @@
 import {
     idntimes
 } from './views/publishers/IDNTimes'
+import { yummy } from './views/publishers/Yummy';
 
 function app(window) {
 
@@ -23,6 +24,9 @@ function apiHandler(publisher, channel, platform) {
     switch (publisher) {
         case 'IDNTimes':
             idntimes(channel, platform);
+            break;
+        case 'Yummy':
+            yummy(channel, platform);
             break;
         default:
             console.warn(`No handler defined for Publisher`);

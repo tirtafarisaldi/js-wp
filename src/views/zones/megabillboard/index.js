@@ -46,8 +46,6 @@ export function megabillboard(publisher, channel, platform) {
         }
     }
 
-    setTimeout(addGptTag, 500)
-
 
     function backToDefault() {
         document.getElementById("header").classList.remove("ad-mega_billboard-container")
@@ -72,7 +70,7 @@ export function megabillboard(publisher, channel, platform) {
     };
 
     document.getElementsByClassName('megabillboard')[0].innerHTML = megabillboardElement;
-
+    addGptTag();
     document.getElementById("btn-close").addEventListener('click', function () {
         var T = document.getElementById("header");
         T.style.display = "none";

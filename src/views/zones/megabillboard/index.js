@@ -22,8 +22,6 @@ function useState(defaultValue) {
 export function megabillboard(publisher, channel, platform) {
     let firstVisit = true;
 
-    document.getElementsByClassName('megabillboard')[0].innerHTML = megabillboardElement;
-
     function addGptTag() {
         let head = document.getElementsByTagName('head')[0];
         var s = document.createElement('script');
@@ -72,6 +70,8 @@ export function megabillboard(publisher, channel, platform) {
     window.onscroll = function () {
         scrollFunction()
     };
+
+    document.getElementsByClassName('megabillboard')[0].innerHTML = megabillboardElement;
 
     document.getElementById("btn-close").addEventListener('click', function () {
         var T = document.getElementById("header");

@@ -33,8 +33,6 @@ export function megabillboard(publisher, channel, platform) {
             .addService(googletag.pubads());
             googletag.pubads().enableSingleRequest();
             googletag.enableServices();}); 
-            
-            googletag.cmd.push(function () {googletag.display('div-gpt-ad-mega_billboard');});
         `;
         try {
             s.appendChild(document.createTextNode(code));

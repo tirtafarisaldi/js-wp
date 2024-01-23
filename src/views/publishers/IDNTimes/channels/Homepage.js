@@ -1,4 +1,7 @@
 import {
+    leaderboard
+} from '../../../zones/leaderboard'
+import {
     amp,
     megabillboard
 } from '../../../zones/megabillboard'
@@ -9,5 +12,6 @@ export function homepage(platform) {
         amp()
     } else {
         megabillboard('IDNTimes', 'Homepage', platform)
+        leaderboard('IDNTimes', 'Homepage', platform)
     }
 }
